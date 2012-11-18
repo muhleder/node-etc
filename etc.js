@@ -183,5 +183,6 @@ Etc.prototype.etc = function(dir) {
 };
 
 Etc.prototype.parseJSON = function(filePath) {
-  return require(filePath);
+  var data = fs.readFileSync(filePath, 'utf8')
+  return JSON.parse(data);
 };
